@@ -1,5 +1,9 @@
 import Game from '../models/game'
 
-export const create = async (req, res) => {
-  res.send('game')
+const GameController = {
+  create: (req, res) => {
+    res.send('game')
+  },
 }
+
+export default GameController
