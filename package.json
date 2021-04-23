@@ -6,7 +6,9 @@
   "scripts": {
     "build": "rm -rf build && webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node ./src/app.js"
+    "start": "nodemon --exec babel-node ./src/app.js",
+    "migrate": "./node_modules/knex/bin/cli.js migrate:latest --knexfile=./knexfile.js",
+    "create:migration": "./node_modules/knex/bin/cli.js migrate:make --knexfile=./knexfile.js"
   },
   "author": "Arturas Solncevas",
   "license": "ISC",
@@ -27,6 +29,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.95.4",
+    "sqlite3": "^5.0.2"
   }
 }
