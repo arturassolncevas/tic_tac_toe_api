@@ -8,7 +8,6 @@ export const setupRoutes = (app) => {
 
   router.get('/logs', logController.index)
 
-  router.post('/logs', logController.create)
   router.post('/games', gameController.create)
   router.post('/moves', moveController.create)
 

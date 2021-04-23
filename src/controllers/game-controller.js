@@ -1,8 +1,25 @@
 import Game from '../models/game'
+import Log from '../models/log'
 
 const GameController = {
-  create: (req, res) => {
-    res.send('game')
+  create: async (req, res) => {
+    const {
+      boardSize,
+      status,
+    } = req.body
+
+    const game = await Game.query().insert({
+      boardSize,
+      resultId: status,
+    })
+
+    const log = await Log.query().insert({
+      gameId: game.id,
+      type: 2,
+      message: 'Game started',
+    })
+
+    res.send({ gameId: game.id, log })
   },
 }
 

@@ -1,12 +1,9 @@
 import Log from '../models/log'
 
 const LogController = {
-  index: (req, res) => {
-    res.send('log')
-  },
-
-  create: (req, res) => {
-    res.send('log')
+  index: async (req, res) => {
+    const logs = await Log.query()
+    res.send(logs)
   },
 }
 
