@@ -2,6 +2,7 @@ exports.up = function (knex) {
   return knex.schema
     .createTable('moves', (table) => {
       table.increments().primary()
+      table.integer('moveNumber')
       table.integer('gameId')
         .references('id')
         .inTable('games')
