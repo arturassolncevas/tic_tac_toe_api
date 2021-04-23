@@ -1,5 +1,10 @@
+import express from 'express'
 import { create } from './controllers/game-controller'
 
-export const setupRoutes = (express) => {
-  express.use('/', create)
+export const setupRoutes = (app) => {
+  const router = express.Router()
+
+  router.get('/games', create)
+
+  app.use('/api/v1/', router)
 }
