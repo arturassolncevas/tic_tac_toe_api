@@ -12,6 +12,7 @@ exports.up = function (knex) {
         .notNullable()
       table.text('message')
       table.json('params')
+      table.timestamps(false, true)
     })
 }
 
