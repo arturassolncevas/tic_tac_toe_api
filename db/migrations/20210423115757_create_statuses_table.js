@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.schema
-    .createTable('results', (table) => {
+    .createTable('statuses', (table) => {
       table.integer('id')
       table.string('name')
       table.string('text')
@@ -8,5 +8,5 @@ exports.up = function (knex) {
 }
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('results')
+  return knex.schema.dropTable('statuses')
 }
