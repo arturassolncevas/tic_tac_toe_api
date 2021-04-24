@@ -3,6 +3,8 @@ import { setupRoutes } from './router'
 import { setupObjection } from '../objection'
 import { setupMiddleware } from './middleware/middleware'
 
+const port = 3000
+const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1'
 const webServer = express()
 
 class App {
@@ -10,8 +12,8 @@ class App {
     setupObjection()
     setupMiddleware(webServer)
     setupRoutes(webServer)
-    webServer.listen(3000, 'localhost', () => {
-      console.log('Listening at localhost:3000')
+    webServer.listen(port, host, () => {
+      console.log(`Listening at ${host}:${port}`)
     })
   }
 }
