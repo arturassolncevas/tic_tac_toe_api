@@ -1,11 +1,11 @@
-const nodeExternals = require('webpack-node-externals');
-const path = require('path');
-require('@babel/register');
+const nodeExternals = require('webpack-node-externals')
+const path = require('path')
+require('@babel/register')
 
 const config = {
   entry: ['babel-polyfill', './src/app.js'],
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './build'),
     filename: 'app.js',
   },
   module: {
@@ -20,5 +20,5 @@ const config = {
   plugins: [],
   target: 'node',
   externals: [nodeExternals()],
-};
-module.exports = config;
+}
+module.exports = config
