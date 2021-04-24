@@ -3,7 +3,7 @@ exports.up = function (knex) {
     .createTable('games', (table) => {
       table.increments().primary()
       table.integer('boardSize')
-      table.dateTime('finishedAt')
+      table.dateTime('finished_at')
       table.integer('resultId')
         .references('id')
         .inTable('results')

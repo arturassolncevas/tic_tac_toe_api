@@ -3,6 +3,7 @@ exports.up = function (knex) {
     .createTable('results', (table) => {
       table.integer('id')
       table.string('name')
+      table.string('text')
     })
 }
 
