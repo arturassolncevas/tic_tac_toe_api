@@ -41,16 +41,14 @@ Migrate and seed database with NODE_ENV=test
 yarn test
 ```
 ## Docker
-Build image
+Build image (package install warnings will be resolved in next upcoming version)
 ```bash
 docker build . -t <name>
 ```
 Run container
 ```bash
-docker run -p 3000:3000 -it
+docker run -p 3000:3000 -it <name>
 ```
-
-
 
 ## License
 
