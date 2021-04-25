@@ -3,5 +3,7 @@ dist/
 build/
 
 db/*.db
+yarn-error.log
 .idea/
+
 
