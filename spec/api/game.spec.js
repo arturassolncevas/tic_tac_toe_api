@@ -27,9 +27,6 @@ describe('Games api/controller', () => {
   describe('/POST game', () => {
     it('it should create game and return log', mochaAsync(async () => {
       const body = { boardSize: 3 }
-      const vvv = await Game.query().first()
-      console.log(vvv)
-
       const res = await chai.request(webServer)
         .post(url)
         .send(body)
