@@ -4,7 +4,7 @@
   "description": "Tic tac toe game api",
   "main": "app.js",
   "scripts": {
-    "test": "export NODE_ENV=test && mocha \"spec/**/*.js\" --require @babel/register",
+    "test": "export NODE_ENV=test && mocha \"spec/**/*.js\" --require @babel/register --exit",
     "start:production": "node ./build/app.js",
     "start:development": "export NODE_ENV=development && nodemon --exec babel-node ./src/app.js",
     "seed": "./node_modules/knex/bin/cli.js seed:run --knexfile=./knexfile.config.js",
