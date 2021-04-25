@@ -12,5 +12,9 @@ module.exports = {
   },
   rules: {
     semi: [2, 'never'],
+    'import/prefer-default-export': 'off',
+    'class-methods-use-this': 'off',
+    'no-undef': 'off',
   },
+
 }
