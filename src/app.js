@@ -5,7 +5,7 @@ import { setupMiddleware } from './middleware/middleware'
 
 const port = 3000
 const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1'
-const webServer = express()
+export const webServer = express()
 
 class App {
   start() {
