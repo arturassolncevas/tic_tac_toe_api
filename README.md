@@ -1,12 +1,12 @@
-# Tic tac toe API
+# Tic-tac-toe API
 
-API for [Tic tac toe client](https://github.com/arturassolncevas/tic_tac_toe_client)
+API for [Tic-tac-toe client](https://github.com/arturassolncevas/tic_tac_toe_client)
 
 ## Prerequisites
 
-[Node.js](https://nodejs.org/en/) v12.16.2
+- [Node.js](https://nodejs.org/en/) v12.16.2
 
-[Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
 
 
 ## Installation
