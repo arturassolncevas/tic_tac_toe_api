@@ -3,41 +3,45 @@ import Move from '../models/move'
 import Log from '../models/log'
 
 const MoveController = {
-  create: async (req, res) => {
-    const {
-      type,
-      gameId,
-      position,
-      moveNumber,
-    } = req.body
-
-    const moveType = await MoveType.query()
-      .where('name', type)
-      .first()
-
-    const move = await Move.query()
-      .insertAndFetch({
+  create: async (req, res, next) => {
+    try {
+      const {
+        type,
         gameId,
+        position,
         moveNumber,
-        typeId: moveType.id,
-      })
+      } = req.body
 
-    const log = await Log.query()
-      .insert({
-        type: 0,
-        gameId,
-        params: {
-          position,
-        },
-        message: `Game ${gameId}:`
-          + ` Player ${move.typeId === 0 ? '1' : '2'}`
-          + ` moved ${JSON.stringify(position)},`
-          + ` move number: ${move.moveNumber}`,
-      })
+      const moveType = await MoveType.query()
+        .where('name', type)
+        .first()
 
-    res.send({
-      log,
-    })
+      const move = await Move.query()
+        .insertAndFetch({
+          gameId,
+          moveNumber,
+          typeId: moveType.id,
+        })
+
+      const log = await Log.query()
+        .insertAndFetch({
+          type: 0,
+          gameId,
+          params: {
+            position,
+          },
+          message: `Game ${gameId}:`
+            + ` Player ${move.typeId === 0 ? '1' : '2'}`
+            + ` moved ${JSON.stringify(position)},`
+            + ` move number: ${move.moveNumber}`,
+        })
+
+      res.send({
+        log,
+      })
+    } catch (e) {
+      next(e)
+    }
   },
 }
 
